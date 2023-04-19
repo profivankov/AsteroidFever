@@ -26,8 +26,6 @@ const materialMap = {
   Iron: 3,
 };
 
-const maxTierValue = 5;
-
 const App = () => {
   const [mass, setMass] = useState(0);
   const [speed, setSpeed] = useState(0);
@@ -60,7 +58,7 @@ const App = () => {
       .then((res) => {
         const { kineticEnergy, tierLevel } = res.data;
         setKineticEnergy(kineticEnergy);
-        setImpactTier(tierLevel ? tierLevel : maxTierValue);
+        setImpactTier(tierLevel);
         deformAsteroid();
       })
       .catch((error) => {
